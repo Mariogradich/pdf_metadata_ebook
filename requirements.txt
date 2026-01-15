@@ -1,0 +1,5 @@
+pypdf
+mysql-connector-python
+python-dotenv
+tk
+psycopg2
