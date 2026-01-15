@@ -1,11 +1,11 @@
 # PDF Metadata Extractor
 
-Esta aplicación permite leer metadatos de archivos PDF ubicados en carpetas locales o compartidas en red (SMB) y guardarlos en una base de datos MySQL. La aplicación también permite categorizar los PDFs según su tema.
+Esta aplicación permite leer metadatos de archivos PDF ubicados en carpetas locales o compartidas en red (SMB) y guardarlos en una base de datos MySQL/PostgreSQL. La aplicación también permite categorizar los PDFs según su tema.
 
 ## ⚙️ Requisitos
 
 - Python 3.8+
-- MySQL Server
+- MySQL/PostgreSQL Server
 - Dependencias de Python (`pip install -r requirements.txt`)
 - Montar la carpeta SMB como unidad de red en el sistema operativo
 
@@ -14,7 +14,7 @@ Esta aplicación permite leer metadatos de archivos PDF ubicados en carpetas loc
 1. Configura tu conexión en el archivo `.env`.
 2. Ejecuta `main.py`.
 3. Usa la interfaz gráfica para seleccionar la carpeta y definir la categoría.
-4. ¡Listo! Los datos se guardarán en tu base MySQL.
+4. ¡Listo! Los datos se guardarán en tu base MySQL/PostgreSQL.
 
 ## 🛠️ Estructura
 
