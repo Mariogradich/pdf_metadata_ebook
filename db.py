@@ -30,7 +30,8 @@ def crear_tabla():
             productor TEXT,
             creador TEXT,
             numero_paginas INT,
-            categoria TEXT
+            categoria TEXT,
+            tamano_arch TEXT
         )
     """)
     conn.commit()
@@ -45,13 +46,13 @@ def guardar_en_postgresql(metadatos):
         # Usamos ON CONFLICT para ignorar duplicados en la columna 'ruta'
         cursor.execute("""
             INSERT INTO pdf_metadatos
-            (ruta, titulo, autor, asunto, productor, creador, numero_paginas, categoria)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            (ruta, titulo, autor, asunto, productor, creador, numero_paginas, categoria, tamano_arch)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
             ON CONFLICT (ruta) DO NOTHING
         """, (
             metadatos["ruta"], metadatos["titulo"], metadatos["autor"],
             metadatos["asunto"], metadatos["productor"], metadatos["creador"],
-            metadatos["numero_paginas"], metadatos["categoria"]
+            metadatos["numero_paginas"], metadatos["categoria"], metadatos["tamano_arch"]
         ))
         conn.commit()
     except Exception as e:
@@ -74,7 +75,8 @@ if __name__ == "__main__":
         "productor": "Productor Ejemplo",
         "creador": "Creador Ejemplo",
         "numero_paginas": 120,
-        "categoria": "Novela"
+        "categoria": "Novela",
+        "tamano_arch": "8773772"
     }
 
     # Guardar los metadatos en la base de datos

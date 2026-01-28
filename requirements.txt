@@ -1,5 +1,3 @@
-pypdf
-mysql-connector-python
-python-dotenv
-tk
-psycopg2
+psycopg2-binary==2.9.11
+pypdf==6.6.1
+python-dotenv==1.2.1
